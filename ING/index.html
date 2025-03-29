@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recipe Ingredient Extractor</title>
+</head>
+<body>
+    <h1>Recipe Ingredient Extractor</h1>
+    <form method="POST">
+        <input type="text" name="recipe_url" placeholder="Enter Recipe URL">
+        <button type="submit">Get Ingredients</button>
+    </form>
+
+    {% if message %}
+        <p style="color: red;">{{ message }}</p>
+    {% endif %}
+
+    {% if ingredients %}
+        <h2>Ingredients for {{ url }}</h2>
+        <ul>
+            {% for ingredient in ingredients %}
+                <li>{{ ingredient }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if wordcloud_img %}
+        <h2>Word Cloud</h2>
+        <img src="data:image/png;base64,{{ wordcloud_img }}" alt="Word Cloud">
+    {% endif %}
+
+    {% if distribution_img %}
+        <h2>Ingredient Distribution</h2>
+        <img src="data:image/png;base64,{{ distribution_img }}" alt="Ingredient Distribution">
+    {% endif %}
+</body>
+</html>
