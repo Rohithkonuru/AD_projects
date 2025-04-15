@@ -6,7 +6,7 @@ import textwrap
 
 # Hugging Face API Details
 API_URL = "https://api-inference.huggingface.co/models/meta-llama/Llama-3.2-3B-Instruct"
-HEADERS = {"Authorization": "Bearer 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"} # Replace with your actual API key
+HEADERS = {"Authorization": "Bearer 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"} # Replace with your actual API key
 
 def query_llama(prompt):
   """Send a prompt to Hugging Face API and return the response."""
